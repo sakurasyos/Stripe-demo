@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stripe研修デモページ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Yu Gothic UI", "Yu Gothic", Meiryo, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .hero {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #4b5563;
+      background: #eef2ff;
+      border-radius: 999px;
+      padding: 6px 12px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 0 0 12px;
+      line-height: 1.3;
+    }
+
+    .lead {
+      font-size: 16px;
+      color: #4b5563;
+      margin: 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      margin-bottom: 24px;
+    }
+
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .product-image {
+      background: linear-gradient(135deg, #dbeafe, #ede9fe);
+      border-radius: 12px;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+    }
+
+    .product-title {
+      font-size: 24px;
+      margin: 0 0 8px;
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 12px 0 20px;
+      color: #111827;
+    }
+
+    .button {
+      display: inline-block;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      text-decoration: none;
+      background: #635bff;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      background: #544cf5;
+    }
+
+    .subtext {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 12px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .flow-step {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .flow-step strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .note {
+      background: #fff7ed;
+      border-left: 4px solid #fb923c;
+      padding: 16px;
+      border-radius: 8px;
+      color: #7c2d12;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 13px;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .product-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .product-image {
+        min-height: 180px;
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="badge">研修用デモ / GitHub Pages版</div>
+      <h1>Stripe 決済導入イメージ デモページ</h1>
+      <p class="lead">
+        このページは、加盟店の簡易WebページからStripeの決済画面へ遷移する流れを、
+        研修用に分かりやすく示すためのサンプルです。
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="product-layout">
+        <div class="product-image" aria-hidden="true">🛒</div>
+
+        <div>
+          <h2 class="product-title">研修用デモ商品</h2>
+          <p>
+            Stripeを使った非対面決済の流れを確認するためのサンプル商品です。<br>
+            このボタンを押すと、Stripeの決済ページへ進みます。
+          </p>
+
+          <div class="price">¥500</div>
+
+          <a
+            class="button"
+            href="https://buy.stripe.com/test_8x27sKcc82gx8ghc198so00"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            購入する
+          </a>
+
+          <p class="subtext">
+            ※ 上記リンク先はStripe Payment Linkに置き換えてください。<br>
+            ※ 研修ではテストモードのリンクを利用してください。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>このデモで確認したいこと</h2>
+      <ul>
+        <li>加盟店側のWebページに、購入ボタンを設置できること</li>
+        <li>ボタン押下後、Stripeの決済ページへ遷移すること</li>
+        <li>非対面決済において、加盟店サイトと決済基盤が役割分担していること</li>
+        <li>加盟店が自前で決済画面をすべて作らなくても、Stripeの仕組みを利用できること</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>画面遷移イメージ</h2>
+      <div class="flow">
+        <div class="flow-step">
+          <strong>1. 加盟店ページ</strong>
+          利用者が商品内容を確認し、「購入する」ボタンを押します。
+        </div>
+        <div class="flow-step">
+          <strong>2. Stripe決済画面</strong>
+          カード情報入力や本人認証など、決済に必要な処理を実施します。
+        </div>
+        <div class="flow-step">
+          <strong>3. 決済完了</strong>
+          支払い完了後、加盟店側で注文完了や受付完了の案内につなげます。
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>研修での説明例</h2>
+      <ul>
+        <li>この画面は加盟店が用意する商品ページです。</li>
+        <li>決済ボタン押下後は、Stripeが提供する決済画面へ遷移します。</li>
+        <li>そのため加盟店は、決済UIや認証機能を一から作り込まなくても導入できます。</li>
+        <li>非対面取引では、こうした外部決済基盤の利用が一般的です。</li>
+      </ul>
+    </section>
+
+    <section class="note">
+      <strong>注意</strong><br>
+      このHTMLは研修用の簡易サンプルです。<br>
+      実運用では、商品情報、完了画面、エラー時の導線、利用規約表示、プライバシー関連表示などを別途整備する必要があります。
+    </section>
+
+    <footer>
+      © Training Demo Page for Stripe / GitHub Pages Sample
+    </footer>
+  </div>
+</body>
+</html>
